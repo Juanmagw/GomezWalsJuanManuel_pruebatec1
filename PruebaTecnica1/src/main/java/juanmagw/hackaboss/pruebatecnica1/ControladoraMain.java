@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import juanmagw.hackaboss.pruebatecnica1.logica.Controladora;
 import juanmagw.hackaboss.pruebatecnica1.logica.Empleado;
+import juanmagw.hackaboss.pruebatecnica1.persistencia.exceptions.EmpleadoDuplicadoException;
 import juanmagw.hackaboss.pruebatecnica1.persistencia.exceptions.EmpleadoInvalidoException;
 
 public class ControladoraMain {
@@ -27,10 +27,10 @@ public class ControladoraMain {
     static int dia;
     static boolean salir = false;
 
-    public static void main(String[] args) {
+    public static void start() {
 
         while (!salir) {
-            System.out.println("¡BIENVENID@ AL SISTEMA DE GESTIÓN DE EMPLEADOS!");
+            System.out.println("¡BIENVENID@ AL SISTEMA DE GESTIÓN DE EMPLEADOS");
             System.out.println("1. Crear empleado");
             System.out.println("2. Modificar empleado");
             System.out.println("3. Eliminar empleado");
@@ -72,10 +72,14 @@ public class ControladoraMain {
                     System.out.println("Saliendo del programa...");
                     System.exit(0);
                     break;
+                default:
+                    System.out.println("Vuelva a escribir una opción entre 1 y 7");
+                    break;
             }
             System.out.println("¿Desea realizar otra operación? Teclee cualquier tecla para continuar o No para salir del programa.");
             if (scanner.next().equalsIgnoreCase("no")) {
                 salir = true;
+                System.out.println("Saliendo del programa...");
             }
         }
     }
@@ -98,11 +102,15 @@ public class ControladoraMain {
             System.out.println("Día");
             dia = scanner.nextInt();
             fechaInicio = LocalDate.of(anio, mes, dia);
-            empleado = new Empleado(1, nombre, apellido, cargo, salario, fechaInicio);
+            try {
+                empleado = new Empleado(1, nombre, apellido, cargo, salario, fechaInicio);
+            } catch (EmpleadoInvalidoException ex) {
+                System.out.println("Error: " + ex);
+            }
             cont = new Controladora();
             cont.crearEmpleado(empleado);
             System.out.println("Ha sido creado con éxito " + empleado);
-        } catch (EmpleadoInvalidoException ex) {
+        } catch (EmpleadoDuplicadoException ex) {
             System.out.println("Error: " + ex);
         }
     }
