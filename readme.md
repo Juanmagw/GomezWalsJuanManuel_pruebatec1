@@ -36,6 +36,8 @@ El programa consta de un menú que nos indica las opciones a elegir y según nue
 
 - Suponemos que al insertar datos por consola no existe la posibilidad de dejar en blanco los campos que se pidrn por scanner.
 
+- Suponemos que en todo campo que deba ser rellenado, solo se puede introducir un dato sin separación por espacios.
+
 ## Tecnologías usadas
 
 > Lenguaje -> Java (JDK 17)
