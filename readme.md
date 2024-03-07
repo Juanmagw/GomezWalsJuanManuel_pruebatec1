@@ -24,7 +24,7 @@ El programa consta de un menú que nos indica las opciones a elegir y según nue
 
 - Se pueden recoger todos los registros de empleados que no están 'borrados' en la BBDD.
 
-- Se pueden eliminar empleados de la BBDD por mediod e borrado lógico.
+- Se pueden eliminar empleados de la BBDD por medio de borrado lógico.
 
 - Se pueden recoger los registros de un sólo empleado por su ID.
 
