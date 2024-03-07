@@ -3,12 +3,17 @@ package juanmagw.hackaboss.pruebatecnica1.persistencia;
 import java.util.ArrayList;
 import java.util.List;
 import juanmagw.hackaboss.pruebatecnica1.logica.Empleado;
+import juanmagw.hackaboss.pruebatecnica1.persistencia.exceptions.EmpleadoDuplicadoException;
 
 public class ControladoraPersistencia {
 
     EmpleadoJpaController ec = new EmpleadoJpaController();
 
-    public void crearEmpleado(Empleado empleado) {
+    public void crearEmpleado(Empleado empleado) throws EmpleadoDuplicadoException {
+        List<Empleado> empleados = ec.findEmpleadoEntities();
+        if (empleados.contains(empleado)) {
+            throw new EmpleadoDuplicadoException("El empleado ya existe en la base de datos");
+        }
         ec.create(empleado);
     }
 
@@ -36,7 +41,6 @@ public class ControladoraPersistencia {
     }
 
     public void eliminarEmpleado(Integer id) throws Exception {
-        //ec.destroy(id);
         Empleado empleado = ec.findEmpleado(id);
         empleado.setBorrado(true);
         ec.edit(empleado);
@@ -48,7 +52,7 @@ public class ControladoraPersistencia {
         Empleado empleado = new Empleado();
         empleado.setCargo(cargo);
         for (Empleado em : empleados) {
-            if (em.getCargo().equals(cargo)) {
+            if (em.getCargo().equalsIgnoreCase(cargo)) {
                 empleado = em;
                 empleadosMismoCargo.add(empleado);
             }

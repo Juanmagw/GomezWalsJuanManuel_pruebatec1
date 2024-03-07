@@ -2,12 +2,13 @@ package juanmagw.hackaboss.pruebatecnica1.logica;
 
 import java.util.List;
 import juanmagw.hackaboss.pruebatecnica1.persistencia.ControladoraPersistencia;
+import juanmagw.hackaboss.pruebatecnica1.persistencia.exceptions.EmpleadoDuplicadoException;
 
 public class Controladora {
 
     ControladoraPersistencia cp = new ControladoraPersistencia();
 
-    public void crearEmpleado(Empleado empleado) {
+    public void crearEmpleado(Empleado empleado) throws EmpleadoDuplicadoException {
         cp.crearEmpleado(empleado);
     }
 

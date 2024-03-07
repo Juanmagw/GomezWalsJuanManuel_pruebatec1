@@ -1,11 +1,12 @@
 juanmagw\hackaboss\pruebatecnica1\logica\Controladora.class
-juanmagw\hackaboss\pruebatecnica1\persistencia\exceptions\PreexistingEntityException.class
 juanmagw\hackaboss\pruebatecnica1\persistencia\exceptions\NonexistentEntityException.class
-juanmagw\hackaboss\pruebatecnica1\persistencia\exceptions\IllegalOrphanException.class
 juanmagw\hackaboss\pruebatecnica1\ControladoraMain.class
 juanmagw\hackaboss\pruebatecnica1\persistencia\EmpleadoJpaController.class
-juanmagw\hackaboss\pruebatecnica1\persistencia\exceptions\EmpleadoInvalidoException.class
 juanmagw\hackaboss\pruebatecnica1\logica\Empleado_.class
+juanmagw\hackaboss\pruebatecnica1\persistencia\ControladoraPersistencia.class
+juanmagw\hackaboss\pruebatecnica1\persistencia\exceptions\PreexistingEntityException.class
+juanmagw\hackaboss\pruebatecnica1\persistencia\exceptions\IllegalOrphanException.class
+juanmagw\hackaboss\pruebatecnica1\persistencia\exceptions\EmpleadoInvalidoException.class
+juanmagw\hackaboss\pruebatecnica1\persistencia\exceptions\EmpleadoDuplicadoException.class
 juanmagw\hackaboss\pruebatecnica1\logica\Empleado.class
 juanmagw\hackaboss\pruebatecnica1\Main.class
-juanmagw\hackaboss\pruebatecnica1\persistencia\ControladoraPersistencia.class
