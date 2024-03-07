@@ -32,9 +32,9 @@ El programa consta de un menú que nos indica las opciones a elegir y según nue
 
 ## Supuestos
 
-- Suponemos que al crear empleados, el cargo será una cadena en singular con gérero masculino para que al buscar un usuario por cargo no haya conflictos.
+- Suponemos que al crear empleados, el cargo será una cadena en singular con género masculino para así poder buscar un usuario por cargo.
 
-- Suponemos 
+- Suponemos que al insertar datos por consola no existe la posibilidad de dejar en blanco los campos que se pidrn por scanner.
 
 ## Tecnologías usadas
 
